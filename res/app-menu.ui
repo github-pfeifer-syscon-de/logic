@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<interface>
+  <!-- interface-requires gtk+ 3.0 -->
+  <menu id="appmenu">
+	<submenu>
+		<attribute name="label" translatable="yes">_File</attribute>
+		<section>
+		  <item>
+			<attribute name="label" translatable="yes">_Start</attribute>
+			<attribute name="action">app.start</attribute>
+		  </item>
+		  <item>
+			<attribute name="label" translatable="yes">S_ave</attribute>
+			<attribute name="action">app.save</attribute>
+		  </item>
+		  <item>
+			<attribute name="label" translatable="yes">_Quit</attribute>
+			<attribute name="action">app.quit</attribute>
+		  </item>
+		</section>
+    </submenu>
+	<submenu id="help">
+	  <attribute name="label" translatable="yes">_Help</attribute> 
+	  <item>
+		<attribute name="label" translatable="yes">_Help</attribute>
+		<attribute name="action">app.help</attribute>
+	  </item>
+	  <item>
+		<attribute name="label" translatable="yes">A_bout</attribute>
+		<attribute name="action">app.about</attribute>
+	  </item>
+    </submenu>
+  </menu>
+</interface>

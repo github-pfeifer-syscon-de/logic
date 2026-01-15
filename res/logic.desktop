@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Version=0.1
+Name=Logic
+Comment=A Raspi specific logic-analyser style program by using Gpio.
+Categories=Application;Utility;
+Exec=logic
+Icon=logic.png

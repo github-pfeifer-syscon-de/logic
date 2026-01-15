@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Generated with glade 3.22.1 -->
+<interface>
+  <requires lib="gtk+" version="3.20"/>
+  <object class="GtkAssistant" id="help-dlg">
+    <property name="can_focus">False</property>
+    <property name="use_header_bar">0</property>
+    <child>
+      <object class="GtkLabel" id="page0">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">Welcome to logic a logicanalysator style program.
+The precautions are:
+* Connect only devices in the supply voltage range 0..3.3V!
+* Watch the output current limits!
+* Some pins e.g. Gpio 14 switched to output mode temporarily during boot
+</property>
+        <property name="wrap">True</property>
+        <property name="width_chars">80</property>
+      </object>
+      <packing>
+        <property name="page_type">intro</property>
+        <property name="has_padding">False</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkLabel" id="page1">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">The interface allows to choose the following parameters:
+* The time between samples (avoid system load during capture as this will lead to nonlinear timing)
+* The trigger bits 0..31 will match the Gpio (Bcm numbers) the trigger will be any change 
+* For a single capture use the Singel button
+* For a continious capture use the Continious button
+* Without a trigger there will be the option to stop capture by unselecting the selected capture button
+</property>
+        <property name="wrap">True</property>
+        <property name="width_chars">80</property>
+      </object>
+      <packing>
+        <property name="has_padding">False</property>
+      </packing>
+    </child>
+    <child>
+      <object class="GtkLabel" id="page2">
+        <property name="visible">True</property>
+        <property name="can_focus">False</property>
+        <property name="label" translatable="yes">This display will always be 1024 samples.
+So with a 10ms timing it will need 10s for the buffer to get displayed, so be a bit patient.
+* The timing is recorded as well and the display is adjusted accordingly (as Linux is not a realtime system, it helps to avoid high load during captrue)
+* There is as much as possible a pre-trigger display up to a quarter of total samples
+* The edge sense capability of the Gpio is used  to detected changes between samples
+* In capture display you can calculate time beween start und end by dragging the mouse 
+</property>
+        <property name="wrap">True</property>
+        <property name="width_chars">80</property>
+      </object>
+      <packing>
+        <property name="page_type">confirm</property>
+        <property name="has_padding">False</property>
+      </packing>
+    </child>
+    <child>
+      <placeholder/>
+    </child>
+    <child>
+      <placeholder/>
+    </child>
+  </object>
+</interface>
