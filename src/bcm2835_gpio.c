@@ -2261,7 +2261,7 @@ int bcm2835_init(void)
 	  }
 
       /* Base of the peripherals block is mapped to VM */
-      bcm2835_peripherals = mapmem("gpio", bcm2835_peripherals_size, memfd, (uint32_t)bcm2835_peripherals_base);
+      bcm2835_peripherals = mapmem("gpio", bcm2835_peripherals_size, memfd, (size_t)bcm2835_peripherals_base);
       if (bcm2835_peripherals == MAP_FAILED) goto exit;
 #endif
       /* Now compute the base addresses of various peripherals,
