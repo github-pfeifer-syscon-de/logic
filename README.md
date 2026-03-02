@@ -1,6 +1,6 @@
 #Logic
 This is a logic-analysator style program for RasPi only.
-I tested this only for 32-Bit Linux. 
+I tested this only for 32-Bit Linux.
 
 It is important that you add:
 
@@ -12,8 +12,8 @@ The udev setup is not required for raspian buster.
 
 To build the auto-tools procedure should look like:
 <pre>
-   autoreconf -fis
-   ./configure --prefix=/usr
-   make CXXFLAGS="-mtune=native -march=native -O3"
-   ./src/logic
+   meson setup build -Dprefix=/usr
+   cd build
+   meson compile
+   ./logic
 </pre>

@@ -20,14 +20,14 @@
 #include <exception>
 #include <thread>
 #include <future>
-// Localisation https://developer.gnome.org/glib/stable/glib-I18N.html 
+// Localisation https://developer.gnome.org/glib/stable/glib-I18N.html
 #include <glib.h>
 #include <glib/gi18n.h>
 
-// Gettext 
+// Gettext
 //#include <libintl.h>
 
-#include "config.h"		// to get PACKAGE
+#include "logic_config.h"		// to get PACKAGE
 #include "LogicApp.hpp"
 
 LogicApp::LogicApp(int argc, char **argv)
@@ -93,19 +93,7 @@ LogicApp::on_startup()
 }
 
 int main(int argc, char** argv) {
-    //printf("DISPLAY=%s\n", getenv("DISPLAY"));
-    //setenv("DISPLAY", ":0", 1);    // Debug on remote display
-	// as suggested by https://developer.gnome.org/glib/stable/glib-I18N.html
-	// or use PACKAGE_DATA_DIR
-	std::cout << "PACKAGE_DATA_DIR " << PACKAGE_DATA_DIR << std::endl; 	// /usr/local/share/logic
-	std::cout << "PACKAGE_LOCALE_DIR " << PACKAGE_LOCALE_DIR << std::endl; 	// /usr/local/share/locale
-	// we did not yet add a translation
-	//std::cout << "GETTEXT_PACKAGE " << GETTEXT_PACKAGE << std::endl; 	// logic
-    //std::cout << "Locale " << setlocale(LC_ALL, "") << std::endl;		// as env
-  	//bindtextdomain(GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
-  	//bind_textdomain_codeset(GETTEXT_PACKAGE, "UTF-8");
-  	//textdomain(GETTEXT_PACKAGE);
-    
+
     auto app = LogicApp(argc, argv);
 
     return app.run();
