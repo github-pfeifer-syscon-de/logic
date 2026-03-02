@@ -35,11 +35,6 @@ LogicApp::LogicApp(int argc, char **argv)
 {
 }
 
-
-LogicApp::~LogicApp()
-{
-}
-
 void
 LogicApp::on_activate()
 {
@@ -92,7 +87,8 @@ LogicApp::on_startup()
     }
 }
 
-int main(int argc, char** argv) {
+int main(int argc, char** argv)
+{
 
     auto app = LogicApp(argc, argv);
 

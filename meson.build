@@ -12,7 +12,7 @@ add_project_arguments('-DPACKAGE_DATA_DIR="' + pkgdatadir + '"', language: 'cpp'
 
 conf = configuration_data()
 conf.set_quoted('VERSION', meson.project_version())     # Surround the version in quotes to make it a C string
-conf.set_quoted('PACKAGE', meson.project_name())     # Surround the version in quotes to make it a C string
+conf.set_quoted('PACKAGE', meson.project_name())    
 conf_file = configure_file(output : meson.project_name() + '_config.h'
     , configuration : conf)
 fs = import('fs')

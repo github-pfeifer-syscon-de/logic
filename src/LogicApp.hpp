@@ -21,12 +21,12 @@
 #include "LogicWindow.hpp"
 
 
-class LogicApp : public Gtk::Application 
+class LogicApp : public Gtk::Application
 {
 public:
     LogicApp(int arc, char **argv);
-    LogicApp(const LogicApp& orig);
-    virtual ~LogicApp();
+    LogicApp(const LogicApp& orig) = default;
+    virtual ~LogicApp() = default;
 
     void on_activate();
     void on_startup();

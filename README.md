@@ -17,3 +17,4 @@ To build the auto-tools procedure should look like:
    meson compile
    ./logic
 </pre>
+This might be somewhat outdated???
