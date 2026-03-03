@@ -25,7 +25,7 @@
 #include <stdlib.h>
 #include <signal.h>
 #include <fcntl.h> 
-#include <sys/io.h>
+//#include <sys/io.h>
 #include <pthread.h>
 #include <errno.h>
 #include <sched.h>

@@ -35,7 +35,7 @@ LogicWindow::LogicWindow()
 , m_planeView(NULL)
 , m_Columns()
 {
-	Glib::RefPtr<Gdk::Pixbuf> pix = Gdk::Pixbuf::create_from_resource("/de/pfeifer_syscon/logic/icon.png");
+	Glib::RefPtr<Gdk::Pixbuf> pix = Gdk::Pixbuf::create_from_resource("/de/pfeifer_syscon/logic/logic.png");
 	set_icon(pix);
 	read_config();
 	
@@ -342,7 +342,7 @@ LogicWindow::read_config()
             std::cerr << "Error loading " << cfg << std::endl;
         }
     }
-    catch (Glib::FileError exc) {
+    catch (const Glib::FileError& exc) {
         // may happen if didn't create a file (yet) but we can go on
         std::cerr << "File Error loading " << cfg << " if its missing, it will be created?" << std::endl;
     }

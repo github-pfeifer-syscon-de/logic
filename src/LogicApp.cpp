@@ -35,18 +35,23 @@ LogicApp::LogicApp(int argc, char **argv)
 {
 }
 
+LogicApp::LogicApp(const LogicApp& orig)
+: Gtk::Application(orig)
+{
+}
+
 void
 LogicApp::on_activate()
 {
-    add_window(m_logicAppWindow);
-    m_logicAppWindow.present();
+    add_window(*m_logicAppWindow);
+    m_logicAppWindow->present();
 }
 
 
 void
 LogicApp::on_action_quit()
 {
-     m_logicAppWindow.hide();
+     m_logicAppWindow->hide();
 
   // Not really necessary, when Gtk::Widget::hide() is called, unless
   // Gio::Application::hold() has been called without a corresponding call
@@ -60,11 +65,12 @@ LogicApp::on_startup()
   // Call the base class's implementation.
   Gtk::Application::on_startup();
 
+    m_logicAppWindow = new LogicWindow();
   // Add actions and keyboard accelerators for the application menu.
-  add_action("start", sigc::mem_fun(m_logicAppWindow, &LogicWindow::on_action_single));
-  add_action("save", sigc::mem_fun(m_logicAppWindow, &LogicWindow::on_action_save));
-  add_action("about", sigc::mem_fun(m_logicAppWindow, &LogicWindow::on_action_about));
-  add_action("help", sigc::mem_fun(m_logicAppWindow, &LogicWindow::on_action_help));
+  add_action("start", sigc::mem_fun(*m_logicAppWindow, &LogicWindow::on_action_single));
+  add_action("save", sigc::mem_fun(*m_logicAppWindow, &LogicWindow::on_action_save));
+  add_action("about", sigc::mem_fun(*m_logicAppWindow, &LogicWindow::on_action_about));
+  add_action("help", sigc::mem_fun(*m_logicAppWindow, &LogicWindow::on_action_help));
   add_action("quit", sigc::mem_fun(*this, &LogicApp::on_action_quit));
   set_accel_for_action("app.quit", "<Ctrl>Q");
 
@@ -89,7 +95,6 @@ LogicApp::on_startup()
 
 int main(int argc, char** argv)
 {
-
     auto app = LogicApp(argc, argv);
 
     return app.run();

@@ -1,8 +1,8 @@
 project('logic', 'c', 'cpp'
-    , default_options: ['c_std=c11'
-                       , 'cpp_std=c++20'
+    , default_options: ['c_std=gnu11'
+                       , 'cpp_std=gnu++11'
                        , 'buildtype=release'
-                       , 'warning_level=2']
+                       , 'warning_level=1']
     , license : 'GPL-3.0'
     , meson_version: '>=1.1.0'
     , version: '0.1')
@@ -35,5 +35,4 @@ project_targt = executable(meson.project_name()
     , dependencies: deps
     , include_directories: inc_dir
     , install: true
-    , win_subsystem: 'windows'  # disable this to see console output for windows
     )

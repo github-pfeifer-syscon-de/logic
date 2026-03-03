@@ -25,13 +25,13 @@ class LogicApp : public Gtk::Application
 {
 public:
     LogicApp(int arc, char **argv);
-    LogicApp(const LogicApp& orig) = default;
+    LogicApp(const LogicApp& orig);
     virtual ~LogicApp() = default;
 
     void on_activate();
     void on_startup();
 private:
-    LogicWindow m_logicAppWindow;
+    LogicWindow* m_logicAppWindow{nullptr};
 
     void on_action_quit();
 };
