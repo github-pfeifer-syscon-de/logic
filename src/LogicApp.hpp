@@ -25,7 +25,6 @@ class LogicApp : public Gtk::Application
 {
 public:
     LogicApp(int arc, char **argv);
-    LogicApp(const LogicApp& orig);
     virtual ~LogicApp() = default;
 
     void on_activate();

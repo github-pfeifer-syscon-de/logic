@@ -31,7 +31,7 @@ deps = [gtkmm3_deps
     ]
 
 project_targt = executable(meson.project_name()
-    , sources, app_resources
+    , sources
     , dependencies: deps
     , include_directories: inc_dir
     , install: true

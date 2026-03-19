@@ -93,9 +93,8 @@ LogicApp::on_startup()
     }
 }
 
-int main(int argc, char** argv)
-{
-    auto app = LogicApp(argc, argv);
+int main(int argc, char** argv) {
+    LogicApp app{ argc, argv};
 
     return app.run();
 }
