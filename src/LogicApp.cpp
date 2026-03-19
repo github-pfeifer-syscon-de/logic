@@ -35,10 +35,6 @@ LogicApp::LogicApp(int argc, char **argv)
 {
 }
 
-LogicApp::LogicApp(const LogicApp& orig)
-: Gtk::Application(orig)
-{
-}
 
 void
 LogicApp::on_activate()
